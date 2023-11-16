@@ -1,6 +1,9 @@
 import lesson.*;
 
+import java.util.Random;
+
 public class Main {
+    private static Object Car;
     public static void main(String[] args) {
         Circle c1 = new Circle("круг", 12);
         Triangle t1 = new Triangle("Триугольник",5,7,3);
@@ -18,19 +21,30 @@ public class Main {
                 System.out.println(((Animal)drowbles[i]).getName());
             }
             drowbles[i].draw();
-
         }
+        System.out.println();
+        Car Bmw = createObject("Bmw");
+        System.out.println(Bmw);
+        Bmw.print();
+        System.out.println();
+        Car Nissan = createObject("Nissan");
+        System.out.println(Nissan);
+        Nissan.print();
+        System.out.println();
+        Car Tayota = createObject("Tayota");
+        System.out.println(Tayota);
+        Tayota.print();
 
     }
-    public Car createObject(String className){
-        Car[] cars = {new Bmw("M5",5,2023,"drift car"),
-                new Tayota("auris",3,2021,4,"city car"),
-                new Nissan("juke",5,2023,"drift car",4)};
-        for (int i = 0; i < cars.length; i++) {
-            switch (className instanceof Bmw);
+    public static Car createObject(String className){
+        switch (className){
+            case "Bmw":
+                return new Bmw("M5",5,2023,"drift car");
+            case "Nissan":
+                return new Nissan("juke",5,2023,"drift car",4);
+            default:
+                return new Tayota("auris",3,2021,4,"city car");
         }
 
-
-        return null;
     }
 }

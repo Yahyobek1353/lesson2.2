@@ -8,6 +8,6 @@ public class Bmw extends Car{
     @Override
     public void print() {
         System.out.println("Данные Машины ---------------------\n" +
-                 "type" + type);
+                 "type" + " " + type);
     }
 }
